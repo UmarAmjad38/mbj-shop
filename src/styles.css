@@ -6,6 +6,7 @@
   --muted: 248 250 252;
   --border: 226 232 240;
   --surface: 255 255 255;
+  --muted-foreground: #6b7280;
 }
 
 :root.dark,
@@ -16,6 +17,7 @@ body.dark,
   --muted: 17 24 39;
   --border: 31 41 55;
   --surface: 3 7 18;
+  --muted-foreground: #9ca3af;
 }
 
 html, body, #root {
@@ -23,21 +25,48 @@ html, body, #root {
 }
 
 body {
-  background-color: rgb(var(--bg));
-  color: rgb(var(--fg));
-  font-family: 'Poppins', 'Cairo', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  transition: background-color .2s ease, color .2s ease;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.section-muted {
-  background-color: rgb(var(--muted));
-}
-
-.border-muted {
-  border-color: rgb(var(--border));
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 .bg-surface {
-  background-color: rgb(var(--surface));
+  background: var(--surface, #ffffff);
 }
 
+.border-muted {
+  border-color: var(--muted, #e5e7eb);
+}
+
+.text-muted {
+  color: var(--muted-foreground, #6b7280);
+}
+
+/* Mobile responsive utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth scrolling for mobile */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+}
