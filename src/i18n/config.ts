@@ -5,6 +5,8 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 const resources = {
   en: { translation: {
     brand: 'AC Repair Pro',
+    companyName: 'Fahad Musleh Al Otaibi Est.',
+    professionalService: 'Professional AC Repair',
     nav: { home: 'Home', services: 'Services', about: 'About', contact: 'Contact' },
     hero: { 
       title: 'Cool Solutions for Every Hot Problem', 
@@ -24,6 +26,15 @@ const resources = {
         drumRepair: 'Drum Repair', motorService: 'Motor Service', leakFixing: 'Leak Fixing', performanceTune: 'Performance Tune',
         coolingIssues: 'Cooling Issues', compressorRepair: 'Compressor Repair', thermostatFix: 'Thermostat Fix', energyOptimization: 'Energy Optimization',
         ovenRepair: 'Oven Repair', microwaveService: 'Microwave Service', dishwasherFix: 'Dishwasher Fix', gasLineCheck: 'Gas Line Check'
+      },
+      ourServices: 'Our Services',
+      learnMore: 'Learn More',
+      partsTitle: 'Common Parts We Service & Replace',
+      stats: {
+        repairs: 'Repairs Completed',
+        emergency: 'Emergency Service',
+        experience: 'Years Experience',
+        rating: 'Customer Rating'
       }
     },
     process: {
@@ -45,7 +56,13 @@ const resources = {
         guarantee: { title: 'Quality Guarantee', desc: 'We stand behind our work with comprehensive warranties on all repairs' },
         response: { title: 'Fast Response', desc: 'Quick diagnosis and efficient repairs to get your AC running smoothly' }
       },
-      brands: 'Authorized Service Provider for Leading Brands'
+      brands: 'Authorized Service Provider for Leading Brands',
+      aboutUs: 'About Us',
+      happyCustomers: 'Happy Customers',
+      successRate: 'Success Rate',
+      serviceInfo: 'Service Information',
+      location: 'Kingdom of Saudi Arabia - Riyadh',
+      licensed: 'Licensed & Insured Service Provider'
     },
     contact: { 
       title: 'Ready to Fix Your AC Today?', 
@@ -60,6 +77,22 @@ const resources = {
         alternative: { title: 'Alternative Line', subtitle: 'Service Booking' },
         whatsapp: { title: 'WhatsApp', subtitle: 'Quick Support', value: 'Chat with us' },
         email: { title: 'Email Support', subtitle: 'Technical Queries' }
+      },
+      getInTouch: 'Get In Touch',
+      emergencyBanner: 'EMERGENCY SERVICE',
+      days: {
+        weekdays: 'Monday - Friday',
+        saturday: 'Saturday',
+        sunday: 'Sunday',
+        emergency: 'Emergency Service',
+        available: '24/7 Available'
+      },
+      areaDescription: 'We provide comprehensive AC repair services throughout Riyadh and surrounding areas.',
+      areas: {
+        central: 'Central Riyadh',
+        north: 'North Riyadh',
+        east: 'East Riyadh',
+        west: 'West Riyadh'
       }
     },
     footer: {
@@ -68,11 +101,22 @@ const resources = {
       contactUs: 'Contact Us',
       serviceHours: 'Service Hours',
       serviceArea: 'Service Area',
-      serviceAreaDesc: 'Riyadh & Surrounding Areas'
+      serviceAreaDesc: 'Riyadh & Surrounding Areas',
+      copyright: 'All rights reserved.',
+      emergency247: 'Emergency 24/7'
+    },
+    qrCode: {
+      title: 'Scan to Visit Website',
+      description: 'Scan this QR code with your phone camera to instantly visit our website',
+      downloadPNG: 'Download QR Code (PNG)',
+      printPDF: 'Print as PDF',
+      footer: 'Perfect for business cards, flyers, and promotional materials'
     },
   } },
   ar: { translation: {
     brand: 'خبير إصلاح المكيفات',
+    companyName: 'مؤسسة فهد مصلح العتيبي',
+    professionalService: 'إصلاح مكيفات احترافي',
     nav: { home: 'الرئيسية', services: 'الخدمات', about: 'من نحن', contact: 'اتصل بنا' },
     hero: { 
       title: 'حلول باردة لكل مشكلة ساخنة', 
@@ -86,7 +130,22 @@ const resources = {
       splitAc: { title: 'إصلاح مكيف سبليت', desc: 'خدمات تركيب وصيانة وإصلاح مكيفات سبليت احترافية' },
       washingMachine: { title: 'خدمة الغسالات', desc: 'حلول إصلاح وصيانة الغسالات الشاملة' },
       refrigerator: { title: 'إصلاح الثلاجات', desc: 'خدمات إصلاح الثلاجات والمجمدات المتخصصة' },
-      kitchenAppliances: { title: 'أجهزة المطبخ', desc: 'إصلاح وصيانة أجهزة المطبخ الشاملة' }
+      kitchenAppliances: { title: 'أجهزة المطبخ', desc: 'إصلاح وصيانة أجهزة المطبخ الشاملة' },
+      features: {
+        installation: 'التركيب', maintenance: 'الصيانة', emergency: 'إصلاح طوارئ', support: 'دعم 24/7',
+        drumRepair: 'إصلاح الأسطوانة', motorService: 'خدمة المحرك', leakFixing: 'إصلاح التسريبات', performanceTune: 'ضبط الأداء',
+        coolingIssues: 'مشاكل التبريد', compressorRepair: 'إصلاح الضاغط', thermostatFix: 'إصلاح الثرموستات', energyOptimization: 'تحسين الطاقة',
+        ovenRepair: 'إصلاح الفرن', microwaveService: 'خدمة الميكروويف', dishwasherFix: 'إصلاح غسالة الصحون', gasLineCheck: 'فحص خط الغاز'
+      },
+      ourServices: 'خدماتنا',
+      learnMore: 'اعرف المزيد',
+      partsTitle: 'القطع الشائعة التي نقوم بصيانتها واستبدالها',
+      stats: {
+        repairs: 'إصلاحات مكتملة',
+        emergency: 'خدمة طوارئ',
+        experience: 'سنوات خبرة',
+        rating: 'تقييم العملاء'
+      }
     },
     process: {
       title: 'كيف نعمل',
@@ -107,7 +166,13 @@ const resources = {
         guarantee: { title: 'ضمان الجودة', desc: 'نقف وراء عملنا بضمانات شاملة على جميع الإصلاحات' },
         response: { title: 'استجابة سريعة', desc: 'تشخيص سريع وإصلاحات فعالة لتشغيل مكيفك بسلاسة' }
       },
-      brands: 'مقدم خدمة معتمد للعلامات التجارية الرائدة'
+      brands: 'مقدم خدمة معتمد للعلامات التجارية الرائدة',
+      aboutUs: 'من نحن',
+      happyCustomers: 'عملاء سعداء',
+      successRate: 'معدل النجاح',
+      serviceInfo: 'معلومات الخدمة',
+      location: 'المملكة العربية السعودية - الرياض',
+      licensed: 'مقدم خدمة مرخص ومؤمن'
     },
     contact: { 
       title: 'مستعد لإصلاح مكيفك اليوم؟', 
@@ -122,6 +187,22 @@ const resources = {
         alternative: { title: 'الخط البديل', subtitle: 'حجز الخدمة' },
         whatsapp: { title: 'واتساب', subtitle: 'دعم سريع', value: 'تحدث معنا' },
         email: { title: 'دعم البريد الإلكتروني', subtitle: 'الاستفسارات التقنية' }
+      },
+      getInTouch: 'تواصل معنا',
+      emergencyBanner: 'خدمة الطوارئ',
+      days: {
+        weekdays: 'الاثنين - الجمعة',
+        saturday: 'السبت',
+        sunday: 'الأحد',
+        emergency: 'خدمة الطوارئ',
+        available: 'متاح 24/7'
+      },
+      areaDescription: 'نقدم خدمات إصلاح المكيفات الشاملة في جميع أنحاء الرياض والمناطق المحيطة.',
+      areas: {
+        central: 'وسط الرياض',
+        north: 'شمال الرياض',
+        east: 'شرق الرياض',
+        west: 'غرب الرياض'
       }
     },
     footer: {
@@ -130,11 +211,22 @@ const resources = {
       contactUs: 'اتصل بنا',
       serviceHours: 'ساعات الخدمة',
       serviceArea: 'منطقة الخدمة',
-      serviceAreaDesc: 'الرياض والمناطق المحيطة'
+      serviceAreaDesc: 'الرياض والمناطق المحيطة',
+      copyright: 'جميع الحقوق محفوظة.',
+      emergency247: 'طوارئ 24/7'
+    },
+    qrCode: {
+      title: 'امسح لزيارة الموقع',
+      description: 'امسح رمز الاستجابة السريعة هذا بكاميرا هاتفك لزيارة موقعنا على الفور',
+      downloadPNG: 'تحميل رمز الاستجابة السريعة (PNG)',
+      printPDF: 'طباعة كملف PDF',
+      footer: 'مثالي لبطاقات العمل والنشرات والمواد الترويجية'
     },
   } },
   ur: { translation: {
     brand: 'اے سی ریپیئر پرو',
+    companyName: 'فہد مصلح العتیبی اسٹیبلیشمنٹ',
+    professionalService: 'پیشہ ورانہ اے سی ریپیئر',
     nav: { home: 'ہوم', services: 'سروسز', about: 'ہمارے بارے میں', contact: 'رابطہ' },
     hero: { 
       title: 'ہر گرم مسئلے کا ٹھنڈا حل', 
@@ -148,7 +240,22 @@ const resources = {
       splitAc: { title: 'اسپلٹ اے سی ریپیئر', desc: 'پیشہ ورانہ اسپلٹ اے سی انسٹالیشن، مینٹیننس، اور ریپیئر سروسز' },
       washingMachine: { title: 'واشنگ مشین سروس', desc: 'مکمل واشنگ مشین ریپیئر اور مینٹیننس حل' },
       refrigerator: { title: 'ریفریجریٹر ریپیئر', desc: 'ماہر ریفریجریٹر اور فریزر ریپیئر سروسز' },
-      kitchenAppliances: { title: 'کچن کے آلات', desc: 'جامع کچن آلات ریپیئر اور مینٹیننس' }
+      kitchenAppliances: { title: 'کچن کے آلات', desc: 'جامع کچن آلات ریپیئر اور مینٹیننس' },
+      features: {
+        installation: 'انسٹالیشن', maintenance: 'مینٹیننس', emergency: 'ایمرجنسی ریپیئر', support: '24/7 سپورٹ',
+        drumRepair: 'ڈرم ریپیئر', motorService: 'موٹر سروس', leakFixing: 'لیک ٹھیک کرنا', performanceTune: 'کارکردگی بہتر بنانا',
+        coolingIssues: 'کولنگ مسائل', compressorRepair: 'کمپریسر ریپیئر', thermostatFix: 'تھرموسٹیٹ ٹھیک کرنا', energyOptimization: 'توانائی کی بہتری',
+        ovenRepair: 'اوون ریپیئر', microwaveService: 'مائیکروویو سروس', dishwasherFix: 'ڈش واشر ٹھیک کرنا', gasLineCheck: 'گیس لائن چیک'
+      },
+      ourServices: 'ہماری سروسز',
+      learnMore: 'مزید جانیں',
+      partsTitle: 'عام پرزے جن کی ہم سروس اور تبدیلی کرتے ہیں',
+      stats: {
+        repairs: 'مکمل ریپیئرز',
+        emergency: 'ایمرجنسی سروس',
+        experience: 'سال تجربہ',
+        rating: 'کسٹمر ریٹنگ'
+      }
     },
     process: {
       title: 'ہم کیسے کام کرتے ہیں',
@@ -169,7 +276,13 @@ const resources = {
         guarantee: { title: 'کوالٹی گارنٹی', desc: 'ہم تمام ریپیئرز پر جامع وارنٹیوں کے ساتھ اپنے کام کے پیچھے کھڑے ہیں' },
         response: { title: 'تیز جواب', desc: 'تیز تشخیص اور موثر ریپیئرز تاکہ آپ کا اے سی ہموار طریقے سے چلے' }
       },
-      brands: 'معروف برانڈز کے لیے مجاز سروس فراہم کنندہ'
+      brands: 'معروف برانڈز کے لیے مجاز سروس فراہم کنندہ',
+      aboutUs: 'ہمارے بارے میں',
+      happyCustomers: 'خوش کسٹمرز',
+      successRate: 'کامیابی کی شرح',
+      serviceInfo: 'سروس کی معلومات',
+      location: 'سعودی عرب کی بادشاہی - ریاض',
+      licensed: 'لائسنس یافتہ اور بیمہ شدہ سروس فراہم کنندہ'
     },
     contact: { 
       title: 'آج ہی اپنا اے سی ٹھیک کرانے کے لیے تیار ہیں؟', 
@@ -184,6 +297,22 @@ const resources = {
         alternative: { title: 'متبادل لائن', subtitle: 'سروس بکنگ' },
         whatsapp: { title: 'واٹس ایپ', subtitle: 'فوری سپورٹ', value: 'ہم سے بات کریں' },
         email: { title: 'ای میل سپورٹ', subtitle: 'تکنیکی سوالات' }
+      },
+      getInTouch: 'رابطے میں رہیں',
+      emergencyBanner: 'ایمرجنسی سروس',
+      days: {
+        weekdays: 'پیر - جمعہ',
+        saturday: 'ہفتہ',
+        sunday: 'اتوار',
+        emergency: 'ایمرجنسی سروس',
+        available: '24/7 دستیاب'
+      },
+      areaDescription: 'ہم ریاض اور آس پاس کے علاقوں میں جامع اے سی ریپیئر سروسز فراہم کرتے ہیں۔',
+      areas: {
+        central: 'مرکزی ریاض',
+        north: 'شمالی ریاض',
+        east: 'مشرقی ریاض',
+        west: 'مغربی ریاض'
       }
     },
     footer: {
@@ -192,7 +321,16 @@ const resources = {
       contactUs: 'ہم سے رابطہ کریں',
       serviceHours: 'سروس کے اوقات',
       serviceArea: 'سروس ایریا',
-      serviceAreaDesc: 'ریاض اور آس پاس کے علاقے'
+      serviceAreaDesc: 'ریاض اور آس پاس کے علاقے',
+      copyright: 'تمام حقوق محفوظ ہیں۔',
+      emergency247: 'ایمرجنسی 24/7'
+    },
+    qrCode: {
+      title: 'ویب سائٹ دیکھنے کے لیے سکین کریں',
+      description: 'اپنے فون کیمرے سے اس QR کوڈ کو سکین کریں تاکہ فوری طور پر ہماری ویب سائٹ پر جائیں',
+      downloadPNG: 'QR کوڈ ڈاؤن لوڈ کریں (PNG)',
+      printPDF: 'PDF کے طور پر پرنٹ کریں',
+      footer: 'بزنس کارڈز، فلائرز، اور پروموشنل میٹریل کے لیے بہترین'
     },
   } },
 } as const

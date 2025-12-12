@@ -59,14 +59,78 @@ code {
   overflow: hidden;
 }
 
-/* Smooth scrolling for mobile */
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Improve touch targets for mobile */
 @media (max-width: 768px) {
-  html {
-    scroll-behavior: smooth;
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
   }
   
-  /* Prevent horizontal scroll */
+  /* Better spacing for mobile */
+  .mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Prevent text overflow */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Improve readability on small screens */
+@media (max-width: 640px) {
+  /* Reduce font sizes slightly on very small screens */
+  .text-7xl {
+    font-size: 3rem !important;
+  }
+  
+  .text-6xl {
+    font-size: 2.5rem !important;
+  }
+  
+  .text-5xl {
+    font-size: 2rem !important;
+  }
+  
+  .text-4xl {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Better focus states for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Print styles for QR code */
+@media print {
   body {
-    overflow-x: hidden;
+    background: white !important;
+  }
+  
+  header, footer, nav {
+    display: none !important;
   }
 }

@@ -41,8 +41,8 @@ export default function ContactSection() {
       icon: Mail,
       title: t('contact.methods.email.title'),
       subtitle: t('contact.methods.email.subtitle'),
-      value: 'info@acrepair.sa',
-      href: 'mailto:info@acrepair.sa',
+      value: 'javaidiqbal1977@gmail.com',
+      href: 'mailto:javaidiqbal1977@gmail.com',
       color: 'from-purple-500 to-pink-600',
       bgColor: 'bg-purple-500/10',
       borderColor: 'border-purple-500/20'
@@ -50,13 +50,7 @@ export default function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-purple-500/5 rounded-full blur-3xl"></div>
-      </div>
+    <section id="contact" className="py-20 bg-slate-800 relative">
 
       <div className="mx-auto max-w-7xl px-4 relative z-10">
         {/* Section Header */}
@@ -69,7 +63,7 @@ export default function ContactSection() {
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <Headphones className="text-cyan-400" size={32} />
-            <span className="text-cyan-400 font-semibold text-lg">Get In Touch</span>
+            <span className="text-cyan-400 font-semibold text-lg">{t('contact.getInTouch')}</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
@@ -104,7 +98,7 @@ export default function ContactSection() {
             className="inline-flex items-center gap-3 mb-4"
           >
             <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
-            <span className="text-red-400 font-bold text-lg">EMERGENCY SERVICE</span>
+            <span className="text-red-400 font-bold text-lg">{t('contact.emergencyBanner')}</span>
             <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
           </motion.div>
           
@@ -143,20 +137,20 @@ export default function ContactSection() {
             
             <div className="space-y-3 text-gray-300">
               <div className="flex justify-between">
-                <span>Monday - Friday</span>
+                <span>{t('contact.days.weekdays')}</span>
                 <span className="text-cyan-400 font-semibold">8:00 AM - 10:00 PM</span>
               </div>
               <div className="flex justify-between">
-                <span>Saturday</span>
+                <span>{t('contact.days.saturday')}</span>
                 <span className="text-cyan-400 font-semibold">9:00 AM - 8:00 PM</span>
               </div>
               <div className="flex justify-between">
-                <span>Sunday</span>
+                <span>{t('contact.days.sunday')}</span>
                 <span className="text-cyan-400 font-semibold">10:00 AM - 6:00 PM</span>
               </div>
               <div className="flex justify-between border-t border-white/10 pt-3 mt-4">
-                <span className="text-red-400 font-semibold">Emergency Service</span>
-                <span className="text-red-400 font-semibold">24/7 Available</span>
+                <span className="text-red-400 font-semibold">{t('contact.days.emergency')}</span>
+                <span className="text-red-400 font-semibold">{t('contact.days.available')}</span>
               </div>
             </div>
           </motion.div>
@@ -175,25 +169,25 @@ export default function ContactSection() {
             
             <div className="space-y-4 text-gray-300">
               <p className="leading-relaxed">
-                We provide comprehensive AC repair services throughout Riyadh and surrounding areas.
+                {t('contact.areaDescription')}
               </p>
               
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                  <span>Central Riyadh</span>
+                  <span>{t('contact.areas.central')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                  <span>North Riyadh</span>
+                  <span>{t('contact.areas.north')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                  <span>East Riyadh</span>
+                  <span>{t('contact.areas.east')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                  <span>West Riyadh</span>
+                  <span>{t('contact.areas.west')}</span>
                 </div>
               </div>
             </div>

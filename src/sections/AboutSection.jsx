@@ -43,12 +43,7 @@ export default function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
-      </div>
+    <section id="about" className="py-20 bg-slate-900 relative">
 
       <div className="mx-auto max-w-7xl px-4 relative z-10">
         {/* Section Header */}
@@ -61,7 +56,7 @@ export default function AboutSection() {
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <Users className="text-cyan-400" size={32} />
-            <span className="text-cyan-400 font-semibold text-lg">About Us</span>
+            <span className="text-cyan-400 font-semibold text-lg">{t('about.aboutUs')}</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
@@ -97,11 +92,11 @@ export default function AboutSection() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
                   <div className="text-3xl font-bold text-cyan-400 mb-2">500+</div>
-                  <div className="text-sm text-gray-400">Happy Customers</div>
+                  <div className="text-sm text-gray-400">{t('about.happyCustomers')}</div>
                 </div>
                 <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
                   <div className="text-3xl font-bold text-blue-400 mb-2">98%</div>
-                  <div className="text-sm text-gray-400">Success Rate</div>
+                  <div className="text-sm text-gray-400">{t('about.successRate')}</div>
                 </div>
               </div>
             </div>
@@ -110,13 +105,13 @@ export default function AboutSection() {
             <div className="bg-gradient-to-br from-cyan-500/10 to-blue-600/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6">
               <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <MapPin className="text-cyan-400" size={20} />
-                Service Information
+                {t('about.serviceInfo')}
               </h4>
               
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3">
                   <MapPin className="text-cyan-400" size={16} />
-                  <span className="text-gray-300">Kingdom of Saudi Arabia - Riyadh</span>
+                  <span className="text-gray-300">{t('about.location')}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="text-green-400" size={16} />
@@ -124,7 +119,7 @@ export default function AboutSection() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Star className="text-yellow-400" size={16} />
-                  <span className="text-gray-300">Licensed & Insured Service Provider</span>
+                  <span className="text-gray-300">{t('about.licensed')}</span>
                 </div>
               </div>
             </div>

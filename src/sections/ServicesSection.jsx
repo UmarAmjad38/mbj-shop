@@ -51,13 +51,7 @@ export default function ServicesSection() {
   const [active, setActive] = useState(null)
   
   return (
-    <section id="services" className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }} />
-      </div>
+    <section id="services" className="py-20 bg-slate-800 relative">
       
       <div className="mx-auto max-w-7xl px-4 relative z-10">
         {/* Section Header */}
@@ -70,7 +64,7 @@ export default function ServicesSection() {
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <Wrench className="text-cyan-400" size={32} />
-            <span className="text-cyan-400 font-semibold text-lg">Our Services</span>
+            <span className="text-cyan-400 font-semibold text-lg">{t('services.ourServices')}</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
@@ -106,21 +100,21 @@ export default function ServicesSection() {
         >
           <div className="space-y-2">
             <div className="text-3xl font-bold text-cyan-400">500+</div>
-            <div className="text-gray-400">Repairs Completed</div>
+            <div className="text-gray-400">{t('services.stats.repairs')}</div>
           </div>
           <div className="space-y-2">
             <div className="text-3xl font-bold text-blue-400">24/7</div>
-            <div className="text-gray-400">Emergency Service</div>
+            <div className="text-gray-400">{t('services.stats.emergency')}</div>
           </div>
           <div className="space-y-2">
             <div className="text-3xl font-bold text-purple-400">15+</div>
-            <div className="text-gray-400">Years Experience</div>
+            <div className="text-gray-400">{t('services.stats.experience')}</div>
           </div>
           <div className="space-y-2">
             <div className="flex items-center justify-center gap-1 text-3xl font-bold text-yellow-400">
               4.9 <Star size={24} fill="currentColor" />
             </div>
-            <div className="text-gray-400">Customer Rating</div>
+            <div className="text-gray-400">{t('services.stats.rating')}</div>
           </div>
         </motion.div>
       </div>
@@ -131,6 +125,7 @@ export default function ServicesSection() {
 }
 
 function ServiceCard({ service, index, onOpen }) {
+  const { t } = useTranslation()
   const Icon = service.icon
   
   return (
@@ -187,7 +182,7 @@ function ServiceCard({ service, index, onOpen }) {
             whileHover={{ x: 5 }}
             className="mt-6 flex items-center gap-2 text-cyan-400 font-semibold text-sm group-hover:text-cyan-300 transition-colors"
           >
-            Learn More
+            {t('services.learnMore')}
             <motion.span
               animate={{ x: [0, 5, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
@@ -339,7 +334,7 @@ function PartsOverlay({ serviceId, onClose }) {
         <div className="p-4 sm:p-6 max-h-[60vh] overflow-y-auto">
           <h4 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
             <span className="text-cyan-400">🔧</span>
-            <span className="text-sm sm:text-base">Common Parts We Service & Replace</span>
+            <span className="text-sm sm:text-base">{t('services.partsTitle')}</span>
           </h4>
           
           <motion.div 

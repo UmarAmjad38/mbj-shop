@@ -56,20 +56,16 @@ function App() {
   const softHover = dark ? 'hover:bg-gray-800' : 'hover:bg-gray-50'
 
   return (
-    <div className="min-h-dvh bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white selection:bg-cyan-200/50 overflow-x-hidden">
+    <div className="min-h-dvh bg-slate-900 text-white selection:bg-blue-200/30 overflow-x-hidden">
       <ParticleBackground />
       
-      {/* Glassmorphism Header */}
-      <header className="sticky top-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800">
         <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="font-bold text-2xl bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
-          >
-            <Wrench className="inline mr-2 text-cyan-400" size={24} />
+          <div className="font-bold text-xl text-white flex items-center gap-2">
+            <Wrench className="text-blue-500" size={22} />
             {t('brand')}
-          </motion.div>
+          </div>
           
           <nav className="hidden md:flex gap-8 items-center">
             {sections.map((s, i) => (
@@ -93,25 +89,20 @@ function App() {
           </nav>
           
           <div className="flex items-center gap-3 relative" ref={langRef}>
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
+            <button 
               onClick={() => setLangOpen(o => !o)} 
-              className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-sm flex items-center gap-2 transition-all"
+              className="px-4 py-2 rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-sm flex items-center gap-2 transition-colors"
             >
               <Languages size={16} />
               {languages.find(l => l.code === i18n.language)?.label || 'Language'}
-            </motion.button>
+            </button>
             
             {langOpen && (
-              <motion.ul 
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="absolute top-full end-0 mt-2 w-44 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xl overflow-hidden"
-              >
+              <ul className="absolute top-full end-0 mt-2 w-44 rounded-lg bg-slate-800 border border-slate-700 shadow-xl overflow-hidden">
                 {languages.map(l => (
                   <li key={l.code}>
                     <button
-                      className="w-full px-4 py-3 text-sm flex items-center justify-between hover:bg-white/10 transition-colors"
+                      className="w-full px-4 py-3 text-sm flex items-center justify-between hover:bg-slate-700 transition-colors"
                       onClick={() => { i18n.changeLanguage(l.code); setLangOpen(false) }}
                     >
                       <span>{l.label}</span>
@@ -119,108 +110,70 @@ function App() {
                     </button>
                   </li>
                 ))}
-              </motion.ul>
+              </ul>
             )}
           </div>
         </div>
       </header>
 
       <main>
-        {/* Revolutionary Hero Section */}
-        <section id="hero" className="relative min-h-screen flex items-center overflow-hidden px-4 sm:px-0">
-          {/* Animated Background Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-20 left-10 w-20 h-20 bg-cyan-500/20 rounded-full blur-xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-10 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-500"></div>
-          </div>
+        {/* Hero Section */}
+        <section id="hero" className="relative min-h-screen flex items-center overflow-hidden px-4 sm:px-0 bg-gradient-to-b from-slate-900 to-slate-800">
           
           <div className="mx-auto max-w-7xl px-4 py-10 sm:py-20 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
             <div className="space-y-8">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="space-y-2"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <Snowflake className="text-cyan-400 animate-spin" size={32} />
-                  <span className="text-cyan-400 font-semibold text-lg">Professional AC Repair</span>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 mb-3">
+                  <Snowflake className="text-blue-500" size={24} />
+                  <span className="text-blue-400 font-medium text-base">{t('professionalService')}</span>
                 </div>
                 
-                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black leading-tight">
-                  <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                    {t('hero.title')}
-                  </span>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                  {t('hero.title')}
                 </h1>
-              </motion.div>
+              </div>
               
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-lg"
-              >
+              <p className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-lg">
                 {t('hero.subtitle')}
-              </motion.p>
+              </p>
               
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <ScrollLink 
+                  to="contact" 
+                  smooth 
+                  offset={-80} 
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 rounded-lg text-white font-medium cursor-pointer hover:bg-blue-700 transition-colors"
                 >
-                  <ScrollLink 
-                    to="contact" 
-                    smooth 
-                    offset={-80} 
-                    className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-semibold cursor-pointer hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
-                  >
-                    <Phone size={20} />
-                    {t('cta.contact')}
-                  </ScrollLink>
-                </motion.div>
+                  <Phone size={18} />
+                  {t('cta.contact')}
+                </ScrollLink>
                 
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <ScrollLink 
+                  to="services" 
+                  smooth 
+                  offset={-80} 
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 rounded-lg border border-slate-700 cursor-pointer hover:bg-slate-700 transition-colors"
                 >
-                  <ScrollLink 
-                    to="services" 
-                    smooth 
-                    offset={-80} 
-                    className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 cursor-pointer hover:bg-white/20 transition-all duration-300"
-                  >
-                    <Zap size={20} />
-                    {t('cta.explore')}
-                  </ScrollLink>
-                </motion.div>
-              </motion.div>
+                  <Zap size={18} />
+                  {t('cta.explore')}
+                </ScrollLink>
+              </div>
               
               {/* Stats */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.8 }}
-                className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10"
-              >
+              <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-700">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-400">500+</div>
-                  <div className="text-sm text-gray-400">{t('hero.stats.clients')}</div>
+                  <div className="text-2xl font-bold text-blue-400">500+</div>
+                  <div className="text-xs text-gray-400">{t('hero.stats.clients')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">24/7</div>
-                  <div className="text-sm text-gray-400">{t('hero.stats.emergency')}</div>
+                  <div className="text-2xl font-bold text-blue-400">24/7</div>
+                  <div className="text-xs text-gray-400">{t('hero.stats.emergency')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-400">15+</div>
-                  <div className="text-sm text-gray-400">{t('hero.stats.experience')}</div>
+                  <div className="text-2xl font-bold text-blue-400">15+</div>
+                  <div className="text-xs text-gray-400">{t('hero.stats.experience')}</div>
                 </div>
-              </motion.div>
+              </div>
             </div>
             
             {/* 3D AC Unit */}

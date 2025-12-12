@@ -7,13 +7,7 @@ export default function SiteFooter() {
   const { t } = useTranslation()
   
   return (
-    <footer className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-t border-white/10 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20v-40c11.046 0 20 8.954 20 20z'/%3E%3C/g%3E%3C/svg%3E")`
-        }} />
-      </div>
+    <footer className="bg-slate-950 border-t border-slate-800 relative">
 
       <div className="mx-auto max-w-7xl px-4 py-16 relative z-10">
         {/* Main Footer Content */}
@@ -36,9 +30,9 @@ export default function SiteFooter() {
               </motion.div>
               <div>
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  AC Repair Pro
+                  {t('brand')}
                 </h3>
-                <p className="text-gray-400 text-sm">Fahad Musleh Al Otaibi Est.</p>
+                <p className="text-gray-400 text-sm">{t('companyName')}</p>
               </div>
             </div>
             
@@ -99,25 +93,14 @@ export default function SiteFooter() {
               </motion.a>
               
               <motion.a
-                href="https://wa.me/966503128467"
-                whileHover={{ x: 5 }}
-                className="flex items-center gap-3 text-gray-300 hover:text-cyan-400 transition-colors group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center group-hover:bg-green-500/30 transition-colors">
-                  <MessageCircle size={16} className="text-green-400" />
-                </div>
-                <span>WhatsApp</span>
-              </motion.a>
-              
-              <motion.a
-                href="mailto:info@acrepair.sa"
+                href="mailto:javaidiqbal1977@gmail.com"
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-3 text-gray-300 hover:text-cyan-400 transition-colors group"
               >
                 <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
                   <Mail size={16} className="text-purple-400" />
                 </div>
-                <span>info@acrepair.sa</span>
+                <span>javaidiqbal1977@gmail.com</span>
               </motion.a>
             </div>
           </motion.div>
@@ -150,7 +133,7 @@ export default function SiteFooter() {
               <div className="border-t border-white/10 pt-3 mt-4">
                 <div className="flex items-center gap-2 text-red-400 font-semibold">
                   <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                  Emergency 24/7
+                  {t('footer.emergency247')}
                 </div>
               </div>
             </div>
@@ -176,7 +159,7 @@ export default function SiteFooter() {
           className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <div className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Fahad Musleh Al Otaibi Est. All rights reserved.
+            © {new Date().getFullYear()} {t('companyName')} {t('footer.copyright')}
           </div>
           
           {/* <div className="flex items-center gap-6 text-sm text-gray-400">
