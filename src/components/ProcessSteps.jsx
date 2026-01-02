@@ -11,33 +11,33 @@ export default function ProcessSteps() {
       icon: Phone,
       title: t('process.call.title'),
       description: t('process.call.desc'),
-      color: 'from-green-500 to-emerald-600',
-      bgColor: 'bg-green-500/10',
-      borderColor: 'border-green-500/20'
+      color: 'from-bus-green to-emerald-600',
+      bgColor: 'bg-bus-green/10',
+      borderColor: 'border-bus-green/20'
     },
     {
       icon: MapPin,
       title: t('process.visit.title'),
       description: t('process.visit.desc'),
-      color: 'from-blue-500 to-cyan-600',
-      bgColor: 'bg-blue-500/10',
-      borderColor: 'border-blue-500/20'
+      color: 'from-bus-blue to-blue-600',
+      bgColor: 'bg-bus-blue/10',
+      borderColor: 'border-bus-blue/20'
     },
     {
       icon: DollarSign,
       title: t('process.quote.title'),
       description: t('process.quote.desc'),
-      color: 'from-yellow-500 to-orange-600',
-      bgColor: 'bg-yellow-500/10',
-      borderColor: 'border-yellow-500/20'
+      color: 'from-bus-brown to-amber-800',
+      bgColor: 'bg-bus-brown/10',
+      borderColor: 'border-bus-brown/20'
     },
     {
       icon: CheckCircle,
       title: t('process.fix.title'),
       description: t('process.fix.desc'),
-      color: 'from-purple-500 to-pink-600',
-      bgColor: 'bg-purple-500/10',
-      borderColor: 'border-purple-500/20'
+      color: 'from-bus-blue via-bus-green to-bus-brown',
+      bgColor: 'bg-bus-blue/10',
+      borderColor: 'border-bus-blue/20'
     }
   ]
 
@@ -59,8 +59,8 @@ export default function ProcessSteps() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+            <span className="bg-gradient-to-r from-bus-blue via-bus-green to-bus-brown bg-clip-text text-transparent italic tracking-tight">
               {t('process.title')}
             </span>
           </h2>
@@ -94,7 +94,7 @@ function ProcessStep({ step, index }) {
       className="group relative"
     >
       {/* Step Number */}
-      <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg z-10">
+      <div className={`absolute -top-4 -left-4 w-10 h-10 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center text-white font-black text-lg shadow-xl z-20 group-hover:scale-125 transition-transform duration-500`}>
         {index + 1}
       </div>
       
@@ -113,7 +113,7 @@ function ProcessStep({ step, index }) {
         
         {/* Content */}
         <div className="relative z-10">
-          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+          <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-bus-blue transition-colors">
             {step.title}
           </h3>
           
@@ -125,12 +125,12 @@ function ProcessStep({ step, index }) {
         {/* Arrow to Next Step */}
         {index < 3 && (
           <motion.div
-            animate={{ x: [0, 5, 0] }}
+            animate={{ x: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-cyan-400 z-20"
+            className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-bus-blue z-20"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </motion.div>
         )}
