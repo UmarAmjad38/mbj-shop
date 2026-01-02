@@ -13,9 +13,9 @@ export default function ContactSection() {
       subtitle: t('contact.methods.call.subtitle'),
       value: '+966 50 312 8467',
       href: 'tel:+966503128467',
-      color: 'from-green-500 to-emerald-600',
-      bgColor: 'bg-green-500/10',
-      borderColor: 'border-green-500/20'
+      color: 'from-bus-green to-emerald-600',
+      bgColor: 'bg-bus-green/10',
+      borderColor: 'border-bus-green/20'
     },
     {
       icon: Phone,
@@ -23,9 +23,9 @@ export default function ContactSection() {
       subtitle: t('contact.methods.alternative.subtitle'),
       value: '+966 59 886 2137',
       href: 'tel:+966598862137',
-      color: 'from-blue-500 to-cyan-600',
-      bgColor: 'bg-blue-500/10',
-      borderColor: 'border-blue-500/20'
+      color: 'from-bus-blue to-blue-600',
+      bgColor: 'bg-bus-blue/10',
+      borderColor: 'border-bus-blue/20'
     },
     {
       icon: MessageCircle,
@@ -33,9 +33,9 @@ export default function ContactSection() {
       subtitle: t('contact.methods.whatsapp.subtitle'),
       value: t('contact.methods.whatsapp.value'),
       href: 'https://wa.me/966503128467',
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-500/10',
-      borderColor: 'border-green-500/20'
+      color: 'from-bus-green to-emerald-700',
+      bgColor: 'bg-bus-green/10',
+      borderColor: 'border-bus-green/20'
     },
     {
       icon: Mail,
@@ -43,9 +43,9 @@ export default function ContactSection() {
       subtitle: t('contact.methods.email.subtitle'),
       value: 'javaidiqbal1977@gmail.com',
       href: 'mailto:javaidiqbal1977@gmail.com',
-      color: 'from-purple-500 to-pink-600',
-      bgColor: 'bg-purple-500/10',
-      borderColor: 'border-purple-500/20'
+      color: 'from-bus-brown to-amber-800',
+      bgColor: 'bg-bus-brown/10',
+      borderColor: 'border-bus-brown/20'
     }
   ]
 
@@ -62,12 +62,12 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Headphones className="text-cyan-400" size={32} />
-            <span className="text-cyan-400 font-semibold text-lg">{t('contact.getInTouch')}</span>
+            <Headphones className="text-bus-blue" size={32} />
+            <span className="text-bus-blue font-bold text-lg tracking-widest uppercase">{t('contact.getInTouch')}</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+            <span className="bg-gradient-to-r from-bus-blue via-bus-green to-bus-brown bg-clip-text text-transparent italic">
               {t('contact.title')}
             </span>
           </h2>
@@ -128,25 +128,25 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
+            className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:border-bus-blue/30 transition-all duration-500"
           >
             <div className="flex items-center gap-3 mb-6">
-              <Clock className="text-cyan-400" size={24} />
+              <Clock className="text-bus-blue" size={24} />
               <h3 className="text-xl font-bold text-white">{t('contact.serviceHours')}</h3>
             </div>
             
             <div className="space-y-3 text-gray-300">
               <div className="flex justify-between">
                 <span>{t('contact.days.weekdays')}</span>
-                <span className="text-cyan-400 font-semibold">8:00 AM - 10:00 PM</span>
+                <span className="text-bus-blue font-bold tracking-wider">8:00 AM - 10:00 PM</span>
               </div>
               <div className="flex justify-between">
                 <span>{t('contact.days.saturday')}</span>
-                <span className="text-cyan-400 font-semibold">9:00 AM - 8:00 PM</span>
+                <span className="text-bus-blue font-bold tracking-wider">9:00 AM - 8:00 PM</span>
               </div>
               <div className="flex justify-between">
                 <span>{t('contact.days.sunday')}</span>
-                <span className="text-cyan-400 font-semibold">10:00 AM - 6:00 PM</span>
+                <span className="text-bus-blue font-bold tracking-wider">10:00 AM - 6:00 PM</span>
               </div>
               <div className="flex justify-between border-t border-white/10 pt-3 mt-4">
                 <span className="text-red-400 font-semibold">{t('contact.days.emergency')}</span>
@@ -160,10 +160,10 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
+            className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:border-bus-green/30 transition-all duration-500"
           >
             <div className="flex items-center gap-3 mb-6">
-              <MapPin className="text-cyan-400" size={24} />
+              <MapPin className="text-bus-green" size={24} />
               <h3 className="text-xl font-bold text-white">{t('contact.serviceArea')}</h3>
             </div>
             
@@ -174,19 +174,19 @@ export default function ContactSection() {
               
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                  <div className="w-2.5 h-2.5 bg-bus-green rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
                   <span>{t('contact.areas.central')}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                  <div className="w-2.5 h-2.5 bg-bus-green rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
                   <span>{t('contact.areas.north')}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                  <div className="w-2.5 h-2.5 bg-bus-green rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
                   <span>{t('contact.areas.east')}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                  <div className="w-2.5 h-2.5 bg-bus-green rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
                   <span>{t('contact.areas.west')}</span>
                 </div>
               </div>
@@ -227,7 +227,7 @@ function ContactCard({ method, index }) {
         
         {/* Content */}
         <div className="relative z-10">
-          <h3 className="text-lg font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">
+          <h3 className="text-lg font-bold text-white mb-1 group-hover:text-bus-blue transition-colors">
             {method.title}
           </h3>
           
@@ -245,7 +245,7 @@ function ContactCard({ method, index }) {
           className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
           whileHover={{ x: 5 }}
         >
-          <span className="text-cyan-400 text-sm font-semibold">
+          <span className="text-bus-blue text-sm font-bold">
             Connect →
           </span>
         </motion.div>

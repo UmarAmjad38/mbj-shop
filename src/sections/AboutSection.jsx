@@ -11,25 +11,25 @@ export default function AboutSection() {
       icon: Award,
       title: t('about.features.certified.title'),
       description: t('about.features.certified.desc'),
-      color: 'from-yellow-500 to-orange-600'
+      color: 'from-bus-brown to-amber-700'
     },
     {
       icon: Clock,
       title: t('about.features.emergency.title'),
       description: t('about.features.emergency.desc'),
-      color: 'from-blue-500 to-cyan-600'
+      color: 'from-bus-blue to-blue-600'
     },
     {
       icon: Shield,
       title: t('about.features.guarantee.title'),
       description: t('about.features.guarantee.desc'),
-      color: 'from-green-500 to-emerald-600'
+      color: 'from-bus-green to-emerald-600'
     },
     {
       icon: Zap,
       title: t('about.features.response.title'),
       description: t('about.features.response.desc'),
-      color: 'from-purple-500 to-pink-600'
+      color: 'from-bus-brown via-bus-green to-bus-blue'
     }
   ]
 
@@ -55,12 +55,12 @@ export default function AboutSection() {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Users className="text-cyan-400" size={32} />
-            <span className="text-cyan-400 font-semibold text-lg">{t('about.aboutUs')}</span>
+            <Users className="text-bus-blue" size={32} />
+            <span className="text-bus-blue font-bold text-lg tracking-widest uppercase">{t('about.aboutUs')}</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+            <span className="bg-gradient-to-r from-bus-blue via-bus-green to-bus-brown bg-clip-text text-transparent italic">
               {t('about.title')}
             </span>
           </h2>
@@ -90,21 +90,21 @@ export default function AboutSection() {
               </p>
               
               <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2">500+</div>
-                  <div className="text-sm text-gray-400">{t('about.happyCustomers')}</div>
+                <div className="text-center p-6 bg-bus-blue/5 rounded-2xl border border-bus-blue/10 hover:border-bus-blue/30 transition-all duration-500 group">
+                  <div className="text-4xl font-bold text-bus-blue group-hover:scale-110 transition-transform">500+</div>
+                  <div className="text-sm text-gray-400 font-medium uppercase">{t('about.happyCustomers')}</div>
                 </div>
-                <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
-                  <div className="text-3xl font-bold text-blue-400 mb-2">98%</div>
-                  <div className="text-sm text-gray-400">{t('about.successRate')}</div>
+                <div className="text-center p-6 bg-bus-green/5 rounded-2xl border border-bus-green/10 hover:border-bus-green/30 transition-all duration-500 group">
+                  <div className="text-4xl font-bold text-bus-green group-hover:scale-110 transition-transform">98%</div>
+                  <div className="text-sm text-gray-400 font-medium uppercase">{t('about.successRate')}</div>
                 </div>
               </div>
             </div>
 
             {/* Contact Info Card */}
-            <div className="bg-gradient-to-br from-cyan-500/10 to-blue-600/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6">
-              <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                <MapPin className="text-cyan-400" size={20} />
+            <div className="bg-gradient-to-br from-bus-blue/10 to-bus-green/10 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:border-bus-blue/30 transition-all duration-500">
+              <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <MapPin className="text-bus-blue" size={24} />
                 {t('about.serviceInfo')}
               </h4>
               
@@ -186,12 +186,12 @@ export default function AboutSection() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                 whileHover={{ scale: 1.1, y: -5 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition-all duration-300 group"
+                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-bus-blue/50 hover:bg-bus-blue/5 transition-all duration-500 group"
               >
-                <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">
+                <div className="text-4xl mb-3 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500">
                   {brand.logo}
                 </div>
-                <div className="text-white font-semibold text-sm group-hover:text-cyan-400 transition-colors">
+                <div className="text-white font-bold text-sm group-hover:text-bus-blue transition-colors">
                   {brand.name}
                 </div>
               </motion.div>
