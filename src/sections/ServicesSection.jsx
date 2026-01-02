@@ -12,9 +12,9 @@ export default function ServicesSection() {
       title: t('services.splitAc.title'),
       description: t('services.splitAc.desc'),
       features: [t('services.features.installation'), t('services.features.maintenance'), t('services.features.emergency'), t('services.features.support')],
-      color: 'from-cyan-500 to-blue-600',
-      bgColor: 'bg-cyan-500/10',
-      borderColor: 'border-cyan-500/20'
+      color: 'from-bus-blue to-blue-700',
+      bgColor: 'bg-bus-blue/10',
+      borderColor: 'border-bus-blue/20'
     },
     { 
       key: 'washingMachine', 
@@ -22,9 +22,9 @@ export default function ServicesSection() {
       title: t('services.washingMachine.title'),
       description: t('services.washingMachine.desc'),
       features: [t('services.features.drumRepair'), t('services.features.motorService'), t('services.features.leakFixing'), t('services.features.performanceTune')],
-      color: 'from-purple-500 to-pink-600',
-      bgColor: 'bg-purple-500/10',
-      borderColor: 'border-purple-500/20'
+      color: 'from-bus-brown to-amber-800',
+      bgColor: 'bg-bus-brown/10',
+      borderColor: 'border-bus-brown/20'
     },
     { 
       key: 'refrigerator', 
@@ -32,9 +32,9 @@ export default function ServicesSection() {
       title: t('services.refrigerator.title'),
       description: t('services.refrigerator.desc'),
       features: [t('services.features.coolingIssues'), t('services.features.compressorRepair'), t('services.features.thermostatFix'), t('services.features.energyOptimization')],
-      color: 'from-green-500 to-emerald-600',
-      bgColor: 'bg-green-500/10',
-      borderColor: 'border-green-500/20'
+      color: 'from-bus-green to-emerald-700',
+      bgColor: 'bg-bus-green/10',
+      borderColor: 'border-bus-green/20'
     },
     { 
       key: 'kitchenAppliances', 
@@ -42,9 +42,9 @@ export default function ServicesSection() {
       title: t('services.kitchenAppliances.title'),
       description: t('services.kitchenAppliances.desc'),
       features: [t('services.features.ovenRepair'), t('services.features.microwaveService'), t('services.features.dishwasherFix'), t('services.features.gasLineCheck')],
-      color: 'from-orange-500 to-red-600',
-      bgColor: 'bg-orange-500/10',
-      borderColor: 'border-orange-500/20'
+      color: 'from-bus-blue via-bus-green to-bus-brown',
+      bgColor: 'bg-bus-brown/10',
+      borderColor: 'border-bus-brown/20'
     },
   ]
   
@@ -63,12 +63,12 @@ export default function ServicesSection() {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Wrench className="text-cyan-400" size={32} />
-            <span className="text-cyan-400 font-semibold text-lg">{t('services.ourServices')}</span>
+            <Wrench className="text-bus-blue" size={36} />
+            <span className="text-bus-blue font-bold text-xl tracking-widest uppercase">{t('services.ourServices')}</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+            <span className="bg-gradient-to-r from-bus-blue via-bus-green to-bus-brown bg-clip-text text-transparent italic">
               {t('services.title')}
             </span>
           </h2>
@@ -98,23 +98,23 @@ export default function ServicesSection() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
         >
-          <div className="space-y-2">
-            <div className="text-3xl font-bold text-cyan-400">500+</div>
-            <div className="text-gray-400">{t('services.stats.repairs')}</div>
+          <div className="space-y-2 p-6 bg-bus-blue/5 rounded-2xl border border-bus-blue/10 hover:border-bus-blue/30 transition-all duration-500 group">
+            <div className="text-4xl font-bold text-bus-blue group-hover:scale-110 transition-transform">500+</div>
+            <div className="text-gray-400 font-medium uppercase text-xs">{t('services.stats.repairs')}</div>
           </div>
-          <div className="space-y-2">
-            <div className="text-3xl font-bold text-blue-400">24/7</div>
-            <div className="text-gray-400">{t('services.stats.emergency')}</div>
+          <div className="space-y-2 p-6 bg-bus-green/5 rounded-2xl border border-bus-green/10 hover:border-bus-green/30 transition-all duration-500 group">
+            <div className="text-4xl font-bold text-bus-green group-hover:scale-110 transition-transform">24/7</div>
+            <div className="text-gray-400 font-medium uppercase text-xs">{t('services.stats.emergency')}</div>
           </div>
-          <div className="space-y-2">
-            <div className="text-3xl font-bold text-purple-400">15+</div>
-            <div className="text-gray-400">{t('services.stats.experience')}</div>
+          <div className="space-y-2 p-6 bg-bus-brown/5 rounded-2xl border border-bus-brown/10 hover:border-bus-brown/30 transition-all duration-500 group">
+            <div className="text-4xl font-bold text-bus-brown group-hover:scale-110 transition-transform">15+</div>
+            <div className="text-gray-400 font-medium uppercase text-xs">{t('services.stats.experience')}</div>
           </div>
-          <div className="space-y-2">
-            <div className="flex items-center justify-center gap-1 text-3xl font-bold text-yellow-400">
+          <div className="space-y-2 p-6 bg-bus-blue/5 rounded-2xl border border-bus-blue/10 hover:border-bus-blue/30 transition-all duration-500 group">
+            <div className="flex items-center justify-center gap-1 text-4xl font-bold text-bus-blue group-hover:scale-110 transition-transform">
               4.9 <Star size={24} fill="currentColor" />
             </div>
-            <div className="text-gray-400">{t('services.stats.rating')}</div>
+            <div className="text-gray-400 font-medium uppercase text-xs">{t('services.stats.rating')}</div>
           </div>
         </motion.div>
       </div>

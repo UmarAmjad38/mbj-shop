@@ -47,11 +47,11 @@ function ACUnit({ position = [0, 0, 0] }) {
       
       {/* Cool Air Effect */}
       <Sparkles 
-        count={50} 
-        scale={[4, 2, 1]} 
-        size={2} 
-        speed={0.5} 
-        color="#00bfff" 
+        count={70} 
+        scale={[6, 3, 2]} 
+        size={3} 
+        speed={0.8} 
+        color="#3b82f6" 
         position={[0, -0.8, 0]}
       />
     </group>
@@ -73,7 +73,7 @@ function RepairTools() {
       <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
         <mesh position={[3, 1, 0]}>
           <boxGeometry args={[0.1, 0.8, 0.05]} />
-          <meshStandardMaterial color="#ff6b35" metalness={0.8} roughness={0.2} />
+          <meshStandardMaterial color="#92400e" metalness={0.8} roughness={0.2} />
         </mesh>
       </Float>
       
@@ -81,7 +81,7 @@ function RepairTools() {
       <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.8}>
         <mesh position={[-3, 0.5, 1]}>
           <cylinderGeometry args={[0.02, 0.02, 0.6]} />
-          <meshStandardMaterial color="#4ecdc4" metalness={0.9} roughness={0.1} />
+          <meshStandardMaterial color="#10b981" metalness={0.9} roughness={0.1} />
         </mesh>
       </Float>
       
@@ -89,7 +89,7 @@ function RepairTools() {
       <Float speed={2.5} rotationIntensity={0.4} floatIntensity={0.6}>
         <mesh position={[2, -1, -1]}>
           <cylinderGeometry args={[0.03, 0.03, 0.5]} />
-          <meshStandardMaterial color="#ff4757" metalness={0.6} roughness={0.3} />
+          <meshStandardMaterial color="#3b82f6" metalness={0.6} roughness={0.3} />
         </mesh>
       </Float>
     </group>
@@ -99,20 +99,21 @@ function RepairTools() {
 export default function ACUnit3D() {
   return (
     <div className="w-full h-full">
-      <Canvas camera={{ position: [5, 2, 5], fov: 50 }}>
-        <Environment preset="city" />
-        <ambientLight intensity={0.4} />
-        <directionalLight position={[10, 10, 5]} intensity={1} />
-        <pointLight position={[-10, -10, -10]} color="#00bfff" intensity={0.5} />
+      <Canvas camera={{ position: [4, 1.5, 4], fov: 45 }}>
+        <Environment preset="night" />
+        <ambientLight intensity={0.6} />
+        <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
+        <pointLight position={[-10, -10, -10]} color="#3b82f6" intensity={2} />
+        <pointLight position={[0, 10, 0]} color="#10b981" intensity={1.5} />
         
-        <ACUnit />
+        <ACUnit position={[0, -0.2, 0]} />
         <RepairTools />
         
         <OrbitControls 
           enableZoom={false} 
           enablePan={false}
           autoRotate
-          autoRotateSpeed={0.5}
+          autoRotateSpeed={1.2}
         />
       </Canvas>
     </div>
