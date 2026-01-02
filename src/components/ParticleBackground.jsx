@@ -46,10 +46,10 @@ function Particles({ count = 100 }) {
 
   return (
     <>
-      <pointLight ref={light} distance={40} intensity={8} color="#00bfff" />
+      <pointLight ref={light} distance={40} intensity={8} color="#3b82f6" />
       <instancedMesh ref={mesh} args={[null, null, count]}>
         <dodecahedronGeometry args={[0.2, 0]} />
-        <meshPhongMaterial color="#00bfff" transparent opacity={0.6} />
+        <meshPhongMaterial color="#10b981" transparent opacity={0.4} />
       </instancedMesh>
     </>
   )
@@ -59,11 +59,11 @@ export default function ParticleBackground() {
   return (
     <div className="fixed inset-0 -z-10">
       <Canvas camera={{ position: [0, 0, 20] }}>
-        <color attach="background" args={['#0a0a0a']} />
-        <fog attach="fog" args={['#0a0a0a', 50, 190]} />
-        <pointLight position={[20, 30, 10]} intensity={1} />
-        <pointLight position={[-10, -20, -10]} color="#ff6b35" intensity={0.5} />
-        <Particles count={150} />
+        <color attach="background" args={['#0c111a']} />
+        <fog attach="fog" args={['#0c111a', 50, 190]} />
+        <pointLight position={[20, 30, 10]} intensity={3} color="#3b82f6" />
+        <pointLight position={[-10, -20, -10]} color="#10b981" intensity={2} />
+        <Particles count={250} />
       </Canvas>
     </div>
   )
