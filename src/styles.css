@@ -7,6 +7,15 @@
   --border: 226 232 240;
   --surface: 255 255 255;
   --muted-foreground: #6b7280;
+  
+  /* New Color Palette: Brown, Green, Blue */
+  --primary-blue: #3b82f6;
+  --primary-green: #10b981;
+  --primary-brown: #92400e;
+  
+  --primary: var(--primary-blue);
+  --secondary: var(--primary-green);
+  --accent: var(--primary-brown);
 }
 
 :root.dark,
@@ -18,6 +27,10 @@ body.dark,
   --border: 31 41 55;
   --surface: 3 7 18;
   --muted-foreground: #9ca3af;
+  
+  --primary-blue: #60a5fa;
+  --primary-green: #34d399;
+  --primary-brown: #b45309;
 }
 
 html, body, #root {
@@ -26,11 +39,13 @@ html, body, #root {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
 }
 
 code {
@@ -70,6 +85,47 @@ body {
   max-width: 100vw;
 }
 
+/* Smooth Animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Float Animation */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Section Entry Animations */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Improve touch targets for mobile */
 @media (max-width: 768px) {
   button, a {
@@ -77,13 +133,11 @@ body {
     min-width: 44px;
   }
   
-  /* Better spacing for mobile */
   .mobile-padding {
     padding-left: 1rem;
     padding-right: 1rem;
   }
   
-  /* Prevent text overflow */
   h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -92,45 +146,26 @@ body {
 
 /* Improve readability on small screens */
 @media (max-width: 640px) {
-  /* Reduce font sizes slightly on very small screens */
-  .text-7xl {
-    font-size: 3rem !important;
-  }
-  
-  .text-6xl {
-    font-size: 2.5rem !important;
-  }
-  
-  .text-5xl {
-    font-size: 2rem !important;
-  }
-  
-  .text-4xl {
-    font-size: 1.75rem !important;
-  }
+  .text-7xl { font-size: 3rem !important; }
+  .text-6xl { font-size: 2.5rem !important; }
+  .text-5xl { font-size: 2rem !important; }
+  .text-4xl { font-size: 1.75rem !important; }
 }
 
 /* Better focus states for accessibility */
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #22d3ee;
+  outline: 2px solid var(--primary-blue);
   outline-offset: 2px;
 }
 
-/* Smooth transitions */
+/* Global transitions */
 * {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Print styles for QR code */
+/* Print styles */
 @media print {
-  body {
-    background: white !important;
-  }
-  
-  header, footer, nav {
-    display: none !important;
-  }
+  body { background: white !important; }
+  header, footer, nav { display: none !important; }
 }
