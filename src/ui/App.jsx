@@ -60,11 +60,11 @@ function App() {
       <ParticleBackground />
       
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800">
+      <header className="sticky top-0 z-50 bg-slate-900/40 backdrop-blur-xl border-b border-white/5">
         <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
           <div className="font-bold text-xl text-white flex items-center gap-2">
-            <Wrench className="text-blue-500" size={22} />
-            {t('brand')}
+            <Wrench className="text-bus-blue" size={24} />
+            <span className="bg-gradient-to-r from-bus-blue to-bus-green bg-clip-text text-transparent">{t('brand')}</span>
           </div>
           
           <nav className="hidden md:flex gap-8 items-center">
@@ -80,9 +80,11 @@ function App() {
                   smooth 
                   spy 
                   offset={-80} 
-                  className="cursor-pointer hover:text-cyan-400 transition-colors duration-300 font-medium"
+                  activeClass="text-bus-blue"
+                  className="cursor-pointer text-gray-300 hover:text-bus-blue transition-all duration-500 font-bold relative group"
                 >
                   {t(s.labelKey)}
+                  <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-bus-blue to-bus-green transition-all duration-500 group-hover:w-full"></span>
                 </ScrollLink>
               </motion.div>
             ))}
@@ -118,18 +120,24 @@ function App() {
 
       <main>
         {/* Hero Section */}
-        <section id="hero" className="relative min-h-screen flex items-center overflow-hidden px-4 sm:px-0 bg-gradient-to-b from-slate-900 to-slate-800">
+        <section id="hero" className="relative min-h-screen flex items-center overflow-hidden px-4 sm:px-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+          {/* Light Glows to Brighten Section */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-bus-blue/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-bus-green/10 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2"></div>
+          <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-bus-blue/10 blur-[150px] rounded-full -translate-x-1/2 -translate-y-1/2"></div>
           
           <div className="mx-auto max-w-7xl px-4 py-10 sm:py-20 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
             <div className="space-y-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-2 mb-3">
-                  <Snowflake className="text-blue-500" size={24} />
-                  <span className="text-blue-400 font-medium text-base">{t('professionalService')}</span>
+                  <Snowflake className="text-bus-blue animate-spin-slow" size={24} />
+                  <span className="text-bus-blue font-semibold text-base tracking-wide uppercase">{t('professionalService')}</span>
                 </div>
                 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                  {t('hero.title')}
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+                  <span className="bg-gradient-to-r from-white via-bus-blue-light to-bus-blue bg-clip-text">
+                    {t('hero.title')}
+                  </span>
                 </h1>
               </div>
               
@@ -142,7 +150,7 @@ function App() {
                   to="contact" 
                   smooth 
                   offset={-80} 
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 rounded-lg text-white font-medium cursor-pointer hover:bg-blue-700 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-bus-blue rounded-full text-white font-bold cursor-pointer hover:bg-bus-blue/80 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-500 active:scale-95"
                 >
                   <Phone size={18} />
                   {t('cta.contact')}
@@ -152,7 +160,7 @@ function App() {
                   to="services" 
                   smooth 
                   offset={-80} 
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 rounded-lg border border-slate-700 cursor-pointer hover:bg-slate-700 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent rounded-full border-2 border-bus-green text-bus-green-light font-bold cursor-pointer hover:bg-bus-green hover:text-white transition-all duration-500 active:scale-95"
                 >
                   <Zap size={18} />
                   {t('cta.explore')}
@@ -161,29 +169,29 @@ function App() {
               
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-700">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-400">500+</div>
-                  <div className="text-xs text-gray-400">{t('hero.stats.clients')}</div>
+                <div className="text-center group">
+                  <div className="text-3xl font-bold text-bus-blue group-hover:scale-110 transition-transform duration-500">500+</div>
+                  <div className="text-xs text-gray-400 font-medium">{t('hero.stats.clients')}</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-400">24/7</div>
-                  <div className="text-xs text-gray-400">{t('hero.stats.emergency')}</div>
+                <div className="text-center group border-x border-slate-700/50">
+                  <div className="text-3xl font-bold text-bus-green group-hover:scale-110 transition-transform duration-500">24/7</div>
+                  <div className="text-xs text-gray-400 font-medium">{t('hero.stats.emergency')}</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-400">15+</div>
-                  <div className="text-xs text-gray-400">{t('hero.stats.experience')}</div>
+                <div className="text-center group">
+                  <div className="text-3xl font-bold text-bus-brown group-hover:scale-110 transition-transform duration-500">15+</div>
+                  <div className="text-xs text-gray-400 font-medium">{t('hero.stats.experience')}</div>
                 </div>
               </div>
             </div>
             
-            {/* 3D AC Unit */}
+            {/* 3D AC Unit - Stronger Appearance */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.8, rotateY: -30 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-              transition={{ delay: 0.4, duration: 1 }}
-              className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden order-first lg:order-last"
+              transition={{ delay: 0.4, duration: 1.2, ease: "easeOut" }}
+              className="relative h-[450px] sm:h-[550px] lg:h-[650px] rounded-[40px] overflow-hidden order-first lg:order-last group shadow-[0_0_50px_rgba(59,130,246,0.2)]"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10 rounded-2xl border border-cyan-500/20"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-bus-blue/30 via-transparent to-bus-green/30 rounded-[40px] border-2 border-white/20 group-hover:border-bus-blue/60 transition-all duration-700 shadow-inner"></div>
               <ACUnit3D />
               
               {/* Floating Elements */}
@@ -197,9 +205,9 @@ function App() {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="absolute top-10 right-10 bg-cyan-500/20 backdrop-blur-sm rounded-full p-4 border border-cyan-500/30"
+                className="absolute top-10 right-10 bg-bus-blue-light/10 backdrop-blur-md rounded-full p-4 border border-bus-blue/30 shadow-[0_0_15px_rgba(96,165,250,0.3)]"
               >
-                <Snowflake className="text-cyan-400" size={24} />
+                <Snowflake className="text-bus-blue-light animate-spin-slow" size={32} />
               </motion.div>
               
               <motion.div
@@ -213,9 +221,9 @@ function App() {
                   ease: "easeInOut",
                   delay: 1
                 }}
-                className="absolute bottom-20 left-10 bg-orange-500/20 backdrop-blur-sm rounded-full p-4 border border-orange-500/30"
+                className="absolute bottom-20 left-10 bg-bus-brown-light/10 backdrop-blur-md rounded-full p-4 border border-bus-brown/30 shadow-[0_0_15px_rgba(180,83,9,0.3)]"
               >
-                <Zap className="text-orange-400" size={24} />
+                <Zap className="text-bus-brown-light" size={32} />
               </motion.div>
             </motion.div>
           </div>
